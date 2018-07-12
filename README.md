@@ -14,5 +14,5 @@
 ### Install
 
 1. Open a new window in Chrome : `chrome://extensions/`
-2. Download the file [QR-Code.crx](./build/QR-Code.crx?raw=true) and drag it to this window to install
+2. Download the file [QR-Code.crx](https://github.com/wyhaya/Chrome-QR-Code/releases) and drag it to this window to install
 
