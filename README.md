@@ -2,9 +2,10 @@
 
 > A very simple `Chrome` plugin, click to generate the QR code of the current page
 
-### Effect
+### Preview
 
-![After formatting](https://user-images.githubusercontent.com/23690145/37023919-70389d2e-2162-11e8-9454-27f0d103c6d3.png)
+![Preview picture](https://user-images.githubusercontent.com/23690145/43043832-671640fc-8dcd-11e8-8e1a-1f829feabcb9.png)
+
 
 ### Use
 
