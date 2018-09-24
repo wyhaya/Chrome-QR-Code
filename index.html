@@ -6,22 +6,68 @@
     <title>QR-Code</title>
 </head>
 <style>
+    *{
+        box-sizing: border-box;
+    }
     body{
         width: 260px;
         height: 260px;
+        padding: 30px;
+    }
+    #qr{
+       width: 200px;
+       height: 200px;
+       overflow: hidden; 
+       position: relative;
     }
     canvas{
         width: 200px;
         height: 200px;
-        margin: 30px;
     }
-    canvas:hover{
+    #qr:hover .bottom{
+        transform: translate3d(0, 0, 0);
+    }
+    .bottom{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, .95);
+        transform: translate3d(0, 100%, 0);
+        transition: transform .2s ease;
+    }
+    textarea{
+        width: 100%;
+        height: 80px;
+        resize: none;
+        border: 1px solid rgb(3, 169, 244);
+        padding: 12px;
+        font-size: 14px;
+        display: block;
+        outline: none;
+        background-color: transparent;
+    }
+    button{
+        outline: none;
+        border: none;
+        width: 100%;
+        height: 32px;
+        color: #fff;
+        font-size: 14px;
+        background-color: rgb(3, 169, 244);
         cursor: pointer;
+    }
+    button:hover{
+        opacity: .9;
     }
 </style>
 <body>
 
-
+<div id="qr">
+    <div class="bottom">
+        <textarea></textarea>
+        <button>Download</button>
+    </div>
+</div>
 
 <script src="qrcode.js"></script>
 <script src="index.js"></script>

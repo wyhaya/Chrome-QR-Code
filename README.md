@@ -10,7 +10,8 @@
 ### Use
 
 * Click the QR code icon in the top right corner of chrome
-* Click the generated QR Code, you can save QR Code pictures to local
+* Click the download button to save the QR code image locally
+* Edit QR code text
 
 ### Install
 

@@ -2,24 +2,50 @@
 
 chrome.tabs.getSelected(null, tab => {
 
+
+    let url = tab.url
+    textarea = document.querySelector('textarea')
+    qr = document.querySelector('#qr')
+    bottom = document.querySelector('.bottom')
+    textarea.value = url
+
+
     let qrCanvas = new AraleQRCode({
         render: 'canvas',
-        text: tab.url,
+        text: url,
         size: 200,
         background: '#FFFFFF',
         foreground: '#000000',
     })
 
-    qrCanvas.setAttribute('title', 'Click to download')
 
-    document.body.insertBefore(qrCanvas, document.querySelector('script'))
+    // add element
+    qr.insertBefore(qrCanvas, bottom)
 
-    qrCanvas.onclick = () => {
-        let imgData = event.target.toDataURL('png')
+
+    // download
+    document.querySelector('button').onclick = () => {
+        let imgData = document.querySelector('canvas').toDataURL('png')
         downloadImg(imgData, tab.title + '.png')
     }
 
+
+    textarea.oninput = () => {
+        url = event.target.value
+        let qrCanvas = new AraleQRCode({
+            render: 'canvas',
+            text: url,
+            size: 200,
+            background: '#FFFFFF',
+            foreground: '#000000',
+        })
+        document.querySelector('canvas').parentNode.removeChild(document.querySelector('canvas'))
+        qr.insertBefore(qrCanvas, bottom)
+    }
+
+    
 })
+
 
 
 const downloadImg = function (imgData, fileName) {
